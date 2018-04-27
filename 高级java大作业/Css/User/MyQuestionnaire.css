@@ -1,0 +1,142 @@
+﻿body {
+}
+
+#head {
+    height: 80px;
+    width: 100%;
+    background-color: #393D49;
+    margin-bottom: 50px;
+}
+
+#foot {
+    height: 100px;
+    width: 100%;
+    margin: 50px;
+}
+
+.PersonInfo {
+    width: 70%;
+    margin: auto;
+}
+
+.PersonInfo_left {
+    vertical-align: middle;
+    display: inline-block;
+    width: 50%;
+}
+
+.PersonInfo_right {
+    display: inline-block;
+    width: 40%;
+    vertical-align: middle;
+}
+
+    .PersonInfo_right p {
+        margin-bottom: 20px;
+    }
+
+.UserInfo-Content {
+    font-size: 14px;
+    color: #666666;
+    line-height: 1.4;
+}
+
+.UserInfo-Edit {
+    cursor: pointer;
+    margin-left: 10px;
+    color: #53a4f4;
+    font-size: 14px;
+}
+
+.questionnaireBox {
+    margin-top: 20px;
+    vertical-align: text-top;
+    margin-left: 20px;
+    display: inline-block;
+    border-radius: 5px;
+    width: 300px;
+    height: 200px;
+    background-color: #ffffff;
+}
+
+    .questionnaireBox:hover {
+        box-shadow: 0px 0px 50px #dcdcdc;
+    }
+
+.addNewQuestionnaire i {
+    font-size: 30px;
+    color: #53a4f4;
+}
+
+.addQuestionnaireBox {
+    cursor: pointer;
+    text-align: center;
+    line-height: 200px;
+    border: dashed 1px #b0b0b0;
+}
+
+.questionnaireBox:hover {
+    box-shadow: 0px 0px 50px #dcdcdc;
+}
+
+.questionsBox {
+    box-shadow: 0px 0px 10px #dcdcdc;
+}
+
+.questionnaireBox {
+    margin-top: 20px;
+    vertical-align: text-top;
+    margin-left: 20px;
+    display: inline-block;
+    border-radius: 5px;
+    width: 300px;
+    height: 200px;
+    background-color: #ffffff;
+}
+
+.questionType {
+    width: 45px;
+    height: 20px;
+    float: right;
+    text-align: center;
+    color: white;
+    background-color: #2196f3;
+    font-style: normal;
+    border-bottom-left-radius: 4px;
+    border-top-right-radius: 4px;
+}
+
+.questionButton {
+    margin-top: 20px;
+    font-size: 15px;
+    cursor: pointer;
+    color: #2196f3;
+}
+
+.questionName {
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    margin-top: 24px;
+    font-size: 16px;
+    overflow: hidden;
+    line-height: 24px;
+}
+
+.questionType, .questionName, .questionTime, .questionButton {
+    margin-left: 20px;
+}
+
+.questionTime {
+    font-size: 15px;
+    margin-top: 5px;
+    color: #adadad;
+}
+
+.questionButtom {
+    background: #f8f8f8;
+    text-align: center;
+    padding: 8px 25px;
+    margin-top: 50px;
+    border-bottom-left-radius: 4px;
+    border-bottom-right-radius: 4px;
+}

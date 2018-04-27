@@ -1,0 +1,158 @@
+﻿@using 高级java大作业.Models
+@model List<高级java大作业.Models.QuestionnaireModel>
+@{
+    ViewBag.Title = "我的问卷";
+    Layout = "~/Views/Home/_HomeLayout.cshtml";
+}
+@{
+    var user = Session["user"] as UserModel;
+}
+<link href="~/layui/css/layui.css" rel="stylesheet" />
+<link href="~/Css/User/MyQuestionnaire.css" rel="stylesheet" />
+<div id="head">&nbsp;</div>
+
+<div class="PersonInfo">
+    <fieldset class="layui-elem-field layui-field-title" style="margin-bottom: 50px;">
+        <legend>个人信息</legend>
+    </fieldset>
+    <div class="PersonInfo_left">
+        <div class="site-demo-upload" style="text-align:center;">
+            <img id="LAY_demo_upload" src="@user.UserImg" style="border-radius:50%;height:200px;width:200px;">
+            <div class="site-demo-upbar">
+                <input type="file" name="file" class="layui-upload-file" id="test">
+            </div>
+        </div>
+
+    </div>
+    <div class="PersonInfo_right">
+        
+        <p>
+            <span class="UserInfo-Content" id="nickNameSuccess">账&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;号 : <span id="UserAccount" >@user.Account</span></span>
+            @*<span class="UserInfo-Edit" onclick="ChangeNickName()">修改</span>*@
+        </p>
+        <p>
+            <span class="UserInfo-Content" id="nickNameSuccess">昵&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;称 : @user.UserName</span>
+            @*<span class="UserInfo-Edit" onclick="ChangeNickName()">修改</span>*@
+        </p>
+        <p>
+            <span class="UserInfo-Content" id="phoneSuccess">手&nbsp;&nbsp;机&nbsp;号 :@user.Tel </span>
+            @*<span class="UserInfo-Edit" onclick="ChangeEditPhone()">修改</span>*@
+        </p>
+        <p>
+            @if (user.Gender)
+        {
+            <span class="UserInfo-Content" id="eMailSuccess">性&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;别 : 男  </span>
+            @*<span class="UserInfo-Edit" onclick="ChangeEditEMail()">修改</span>*@
+        }
+        else
+        {
+            <span class="UserInfo-Content" id="eMailSuccess">性&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;别 : 女  </span>
+            @*<span class="UserInfo-Edit" onclick="ChangeEditEMail()">修改</span>*@
+        }
+
+    </p>
+    <p>
+        <span class="UserInfo-Content">密&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;码 : ******(不可见)</span>
+        @*<span class="UserInfo-Edit" onclick="ChangenEditPassword()">修改</span>*@
+    </p>
+    <p>
+        <span class="UserInfo-Content">创建时间 : @user.CreateTime</span>
+        @*<span class="UserInfo-Edit" onclick="ChangenEditPassword()">修改</span>*@
+    </p>
+    </div>
+    <fieldset class="layui-elem-field layui-field-title" style="margin-top: 200px;">
+        <legend>我的问卷</legend>
+        <div>
+            <a href="/Home/Create" >
+                <div class="questionnaireBox addQuestionnaireBox">
+                    <span class="addNewQuestionnaire">
+                        <i class="layui-icon"></i>
+                        <i>新建</i>
+                    </span>
+                </div>
+            </a>
+            @foreach (var questionnaire in Model)
+            {
+                <a class="pointer" href="/Home/QuestionnaireAnalysis?QId=@questionnaire.QId">
+                    <div class="questionnaireBox questionsBox">
+                        <i class="questionType">问卷</i>
+                        <p class="questionName">@questionnaire.QName</p>
+                        <p class="questionTime">@questionnaire.CreateTime 时创建</p>
+                        <p class="questionButton">查看报表</p>
+                        <p class="questionButtom">
+                            <span class="questionStatus">进行中</span>
+                            <span class="questionDataNum">@questionnaire.NumOfPeople 人填写</span>
+                        </p>
+                    </div>
+                </a>
+            }
+        </div>
+    </fieldset>
+</div>
+
+<div id="foot">&nbsp;</div>
+
+<script src="~/Js/jquery.min.js"></script>
+<script src="~/layui/layui.js"></script>
+<script>
+    layui.use('upload', function () {
+        layui.upload({
+            url: '/Home/ChangeUserImg'
+          , elem: '#test' //指定原始元素，默认直接查找class="layui-upload-file"
+          , method: 'post' //上传接口的http类型
+          , before: function (input) {
+                 //返回的参数item，即为当前的input DOM对象
+                 console.log('文件上传中');
+          }
+          , success: function (res) {
+              LAY_demo_upload.src = JSON.parse(res);
+              UserImg.src = JSON.parse(res);
+          }
+          
+        });
+    });
+   
+    function GetQuestionnaire(UserAccount) {
+        layui.use('layer', function () {
+            var layer = layui.layer;
+        });
+        $.ajax({
+            url: "/Home/GetQuestionnaireByUser",
+            type: "POST",
+            data: { "UserAccount": UserAccount },
+            async: false,
+            dataType: "Json",
+            beforeSend: function () {
+                layer.load(2); //
+            },
+            complete: function () {
+                layer.closeAll('loading')
+            },
+            error: function (xhr) {
+                layer.msg('获取失败')
+            },
+            success: function (data) {
+                var obj = JSON.parse(data);
+                for(var i = 0; i < obj.length;i++){
+                    var a = document.createElement('a');
+                    a.className = "pointer";
+                    a.href = "/Home/QuestionnaireAnalysis?" + obj[i].QId;
+                    a.innerHTML=
+                     '<div class="questionnaireBox questionsBox">'+
+                         '<i class="questionType">问卷</i>'+
+                         '<p class="questionName">' + obj[i].QName + '</p>' +
+                        ' <p class="questionTime">' + obj[i].CreateTime + '时创建</p>' +
+                        ' <p class="questionButton">查看报表</p>'+
+                         '<p class="questionButtom">'+
+                            ' <span class="questionStatus">进行中</span>'+
+                             '<span class="questionDataNum">' + obj[i].NumOfPeople + '人填写</span>' +
+                        ' </p>'+
+                    ' </div>';
+           
+                }
+                layer.closeAll('page')
+            }
+
+        })
+    }
+</script>

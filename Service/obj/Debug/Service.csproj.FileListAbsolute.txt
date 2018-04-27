@@ -1,0 +1,24 @@
+E:\visual studio code\高级java大作业\Service\bin\Debug\Service.exe.config
+E:\visual studio code\高级java大作业\Service\bin\Debug\Service.exe
+E:\visual studio code\高级java大作业\Service\bin\Debug\Service.pdb
+E:\visual studio code\高级java大作业\Service\bin\Debug\EntityFramework.dll
+E:\visual studio code\高级java大作业\Service\bin\Debug\EntityFramework.SqlServer.dll
+E:\visual studio code\高级java大作业\Service\bin\Debug\EntityFramework.xml
+E:\visual studio code\高级java大作业\Service\bin\Debug\EntityFramework.SqlServer.xml
+E:\visual studio code\高级java大作业\Service\bin\Debug\zh-Hans\EntityFramework.resources.dll
+E:\visual studio code\高级java大作业\Service\bin\Debug\zh-Hans\EntityFramework.SqlServer.resources.dll
+E:\visual studio code\高级java大作业\Service\obj\Debug\Service.csprojResolveAssemblyReference.cache
+E:\visual studio code\高级java大作业\Service\obj\Debug\Service.exe
+E:\visual studio code\高级java大作业\Service\obj\Debug\Service.pdb
+E:\mycode\高级java大作业\Service\obj\Debug\Service.csprojResolveAssemblyReference.cache
+E:\mycode\高级java大作业\Service\obj\Debug\Service.exe
+E:\mycode\高级java大作业\Service\obj\Debug\Service.pdb
+E:\mycode\高级java大作业\Service\bin\Debug\Service.exe.config
+E:\mycode\高级java大作业\Service\bin\Debug\Service.exe
+E:\mycode\高级java大作业\Service\bin\Debug\Service.pdb
+E:\mycode\高级java大作业\Service\bin\Debug\EntityFramework.dll
+E:\mycode\高级java大作业\Service\bin\Debug\EntityFramework.SqlServer.dll
+E:\mycode\高级java大作业\Service\bin\Debug\EntityFramework.xml
+E:\mycode\高级java大作业\Service\bin\Debug\EntityFramework.SqlServer.xml
+E:\mycode\高级java大作业\Service\bin\Debug\zh-Hans\EntityFramework.resources.dll
+E:\mycode\高级java大作业\Service\bin\Debug\zh-Hans\EntityFramework.SqlServer.resources.dll

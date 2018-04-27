@@ -1,0 +1,32 @@
+﻿body {
+}
+#head {
+    height: 80px;
+    width: 100%;
+    background-color: #393D49;
+    margin-bottom: 50px;
+}
+
+#foot {
+    height: 100px;
+    width: 100%;
+    margin: 50px;
+}
+.page{
+    width:50%;
+    margin:auto;
+}
+.questionName{
+    margin:auto;
+    margin-bottom:30px;
+    text-align:center;
+
+}
+
+.show_Title{
+    margin-top:30px;
+    margin:auto;
+    margin-bottom:30px;
+    text-align:center;
+    font-size:23px;
+}

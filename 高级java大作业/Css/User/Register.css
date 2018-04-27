@@ -1,0 +1,48 @@
+﻿body {
+}
+
+#head {
+    height: 80px;
+    width: 100%;
+    background-color: #393D49;
+    margin-bottom: 50px;
+}
+
+#iH1 {
+    color: #1E9FFF;
+    text-align: center;
+    font-size: 35px;
+    width: 60%;
+    margin: auto;
+    margin-bottom: 25px;
+}
+
+#foot {
+    height: 100px;
+    width: 100%;
+    margin: 50px;
+}
+
+.input {
+    width: 450px;
+    margin-left: 20px;
+}
+
+.iForm {
+    width: 60%;
+    text-align: center;
+    margin: auto;
+}
+
+.iDiv {
+    width: 50%;
+    text-align: center;
+    margin: auto;
+    margin-bottom: 25px;
+}
+
+.iLabel {
+    width: 100px;
+    text-align: center;
+    margin: auto;
+}

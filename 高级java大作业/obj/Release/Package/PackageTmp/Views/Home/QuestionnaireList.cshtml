@@ -1,0 +1,30 @@
+﻿
+@{
+    ViewBag.Title = "填写问卷";
+    Layout = "~/Views/Home/_HomeLayout.cshtml";
+}
+<link href="~/layui/css/layui.css" rel="stylesheet" />
+<link href="~/Css/User/QuestionnaireList.css" rel="stylesheet" />
+<div id="head">&nbsp;</div>
+<form class="layui-form" onsubmit="return false;">
+    <div id="serchMode">
+        <select name="serchMode"id="serchByMode" lay-verify="">
+            <option value="QName" selected>按问卷</option>
+            <option value="UserName">按作者</option>
+        </select>
+    </div>
+    <div class="layui-form-item iDiv">
+        <input type="text" id="serch" name="serch" required lay-verify="required" placeholder="请输入问卷名" autocomplete="off" class="layui-input">  
+   </div>
+    <button class="layui-btn iBtn" onclick="SerchQ($('#serch').val())">
+        <i class="layui-icon">&#xe615;</i>
+    </button>
+</form>
+
+<ul id="biuuu_city_list" class="showList"></ul> 
+<div id="paging" class="showList"></div>
+     
+<div id="foot">&nbsp;</div>
+<script src="~/Js/jquery.min.js"></script>
+<script src="~/layui/layui.js"></script>
+<script src="~/Js/QuestionnaireList.js"></script>
